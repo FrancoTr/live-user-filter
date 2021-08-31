@@ -28,5 +28,12 @@ async function getData() {
 }
 
 function filterData(searchTerm) {
-  console.log(searchTerm);
+  //if we type a name or location, we dinamically filter the loaded user cards
+  listItems.forEach((item) => {
+    if (item.innerText.toLowerCase().includes(searchTerm.toLowerCase())) {
+      item.classList.remove("hide");
+    } else {
+      item.classList.add("hide"); //if the input of the filter does not match either name or location, the user card is dinamically hidden
+    }
+  });
 }
