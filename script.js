@@ -9,7 +9,7 @@ async function getData() {
   const { results } = await res.json();
 
   // Clear results
-  results.innerHTML = "";
+  result.innerHTML = "";
 
   results.forEach((user) => {
     const li = document.createElement("li"); //we create a list item for each of these users
