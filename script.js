@@ -3,6 +3,8 @@ const filter = document.getElementById("filter");
 const listItems = [];
 getData();
 
+filter.addEventListener("input", (e) => filterData(e.target.value));
+
 async function getData() {
   const res = await fetch("https://randomuser.me/api?results=50"); //brings 50 random users
 
@@ -23,4 +25,8 @@ async function getData() {
     `;
     result.appendChild(li); //we put each user (li) inside the parent element (ul "result")
   });
+}
+
+function filterData(searchTerm) {
+  console.log(searchTerm);
 }
